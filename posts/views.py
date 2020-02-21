@@ -76,7 +76,7 @@ def post_edit(request, username, post_id):
             new_post.save()
             return redirect('post', username=username, post_id=post_id)
     form = PostForm(instance=post)
-    return render(request, 'post_new.html', {'form': form, 'title': title, 'submit': submit})
+    return render(request, 'post_new.html', {'form': form, 'title': title, 'submit': submit, 'post': post})
 
 
 @login_required
