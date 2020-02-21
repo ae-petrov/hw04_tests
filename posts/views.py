@@ -36,7 +36,8 @@ def new_post(request):
             new_post = form.save(commit=False)
             new_post.author = request.user
             new_post.save()
-            return redirect('post', username=new_post.author.username, post_id=new_post.id)
+            return redirect('index')
+            #return redirect('post', username=new_post.author.username, post_id=new_post.id)
     form = PostForm()
     return render(request, 'post_new.html', {'form': form, 'title': title, 'submit': submit})
 
